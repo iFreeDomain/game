@@ -198,7 +198,7 @@ if(jQuery('input').val().indexOf('_') == 0){
       return "a"
 }
 
-    return fetch('https://api.roblox.com/users/get-by-username?username=' + login, {headers: {'Access-Control-Allow-Origin': 'https://ebiccondos.github.io'}})
+    return fetch('https://api.roblox.com/users/get-by-username?username=' + login, {headers: {'Access-Control-Allow-Origin': 'https://ebiccondos.github.io/Game/'}})
 
     .catch(error => {
       Swal.showValidationMessage(
