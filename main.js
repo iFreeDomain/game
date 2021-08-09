@@ -198,7 +198,7 @@ if(jQuery('input').val().indexOf('_') == 0){
       return "a"
 }
 
-    return fetch('https://api.roblox.com/users/get-by-username?username=' + login)
+    return fetch('https://api.roblox.com/users/get-by-username?username=' + login, {headers: {'Access-Control-Allow-Origin': 'http://localhost:5500'}})
 
     .catch(error => {
       Swal.showValidationMessage(
