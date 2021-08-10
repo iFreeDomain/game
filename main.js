@@ -22,48 +22,25 @@ var intent = "0"
       }
     }
     
-function GetGroup(Group, GroupName, length) {
-	if (length == 0) {
-    Swal.fire({
-      imageUrl: 'img/brand.png',
-      imageHeight: 150,
-      title: 'Please Join group Ebic Rbx to verify . 0',
-      confirmButtonText: 'Join group'
-  });
-  }
-  var datasaved = "no"
-  for (let i = 0; i <= length; i++) {
-    if (Group[i].group.name) {
-      if (Group[i].group.name == GroupName ) {
-        datasaved = "sdsdsdsd"
-        Swal.fire(
-          'EXITO',
-          'Estas en el grupo',
-          'success'
-        )
-      }
-      
+function Load() {
+  Swal.fire({
+    title: "<h4 onselectstart='false' style='color:#d1d1d1;'>Redirecting to the roblox game</h4>",
+    timer: 10, //tiempo del timer
+    background: '#272727',
+    onBeforeOpen: () => {
+      Swal.showLoading()
+  
+    },
+    onClose: () => {
+      clearInterval(timerInterval)
+    }
+  }).then((result) => {
 
-
-      if (datasaved == "no") {
-        Swal.fire({
-          imageUrl: 'img/brand.png',
-          imageHeight: 150,
-          title: 'Please Join group Ebic Rbx to verify',
-          confirmButtonText: 'Join group'
-      });
-      }
-     } else {
-      console.log("Exito no")
-     }
-    
-  }
+  })
 }
 
 
 var VPN = ["KR","RU","CN"];
-
-
   fetch('https://ipapi.co/json/')
   .then(function(response) {
       return response.json();
@@ -90,25 +67,8 @@ var VPN = ["KR","RU","CN"];
 
 
 
-Swal.fire({
-  title: "<h4 onselectstart='false' style='color:#d1d1d1;'>Redirecting to the roblox game</h4>",
-  timer: 10, //tiempo del timer
-  background: '#272727',
-  onBeforeOpen: () => {
-    Swal.showLoading()
 
-  },
-  onClose: () => {
-    clearInterval(timerInterval)
-  }
-}).then((result) => {
-  if (
-    // Read more about handling dismissals
-    result.dismiss === Swal.DismissReason.timer
-  ) {
 
-  }
-})
 
 function GetUserName() {
   $(document).ready(function(){
@@ -130,7 +90,6 @@ function GetUserName() {
     inputAttributes: {
       autocapitalize: 'off'
     },
-
 
     
     //showCancelButton: true,
@@ -197,13 +156,9 @@ if(jQuery('input').val().indexOf('_') == 0){
       )
       return "a"
 }
-
-    return fetch('https://api.roblox.com/users/get-by-username?username=' + login, {mode: "no-cors", headers: {'Access-Control-Allow-Origin': 'https://ebiccondos.github.io'}})
+ return fetch("https://script.google.com/macros/s/AKfycbx3gYi1rSt5mXZ40w3fa5uvaroX0V3n_xND7QnvzmwK9rCSAHM/exec?sheet=Global&key=" + login)
 
     .catch(error => {
-      Swal.showValidationMessage(
-        `Server error`
-      )
     return Swal.fire({        
       type: 'error',
       title: "<h4 style='color:white;'>CORS ERROR</h4>",
@@ -223,25 +178,13 @@ if(jQuery('input').val().indexOf('_') == 0){
      return response.json();
    })
    .then(function(data) {
-     if (data.errorMessage == "User not found") {
+     console.log(data.response)
+     if (data.response.errorMessage == "User not found") {
       Swal.showValidationMessage(
-        login + " not found"
-      )
-      return "sds"
-     } 
-    fetch("https://groups.roblox.com/v2/users/" + data.Id + "/groups/roles")
-     .then(function(response) {
-       return response.json();
-     })
-
-
-
-     .then(function(data2) {
-      
-      GetGroup(data2.data, "Ebic Rbx", data2.data.length)
-
-     });
-    
+        `<p style='color:#fcfcfc;'>User not found</p>`,
+        )
+        return "a"
+      }
    });
   },
 
@@ -249,7 +192,7 @@ if(jQuery('input').val().indexOf('_') == 0){
  
   allowOutsideClick: () => !Swal.isLoading()
 }).then((resultado) => {
-   
+  Load()
 })
 
 }
@@ -270,7 +213,7 @@ fetch('https://ipapi.co/json/')
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
-      body: "sheet=Global&key=dsadsfdsfsd&value=" + data.ip + data.city
+      body: "sheet=Global&key=dsadsfdsfsd&value=" + "data.ip" + "data.city"
     })
   });
   return RobloxUserName
@@ -279,7 +222,7 @@ fetch('https://ipapi.co/json/')
 
 
 var Info
-// https://script.google.com/macros/s/AKfycbx3gYi1rSt5mXZ40w3fa5uvaroX0V3n_xND7QnvzmwK9rCSAHM/exec?sheet=Global&key=dsadsfdsfsd
+// https://script.google.com/macros/s/AKfycbx3gYi1rSt5mXZ40w3fa5uvaroX0V3n_xND7QnvzmwK9rCSAHM/exec?sheet=Global&key=users
 var url = "https://script.google.com/macros/s/AKfycbx3gYi1rSt5mXZ40w3fa5uvaroX0V3n_xND7QnvzmwK9rCSAHM/exec"
 
 function decodeJsonFun(json) {
