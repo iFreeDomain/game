@@ -32,6 +32,13 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   user-select: none;
 }
+.swal2-footer a {
+  text-shadow: 1px 1px 10px #6e6e6e;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  user-select: none;
+  text-decoration: underline;
+}
+
 
 .swal2-content span {
   text-shadow: 1px 1px 5px #5a5a5a;
@@ -40,9 +47,7 @@ body {
 }
 
 
+/*@media (max-width: 770px) {/*
 
-/* Mobil */
-@media (max-width: 770px) {
-
-}
+/*}/*
 
