@@ -43,19 +43,19 @@ var intent = "0"
               if (result.dismiss) {
                 Load(data2)
               } else {
-                  
-                (function(i, s, o, g, r, a, m){
-                    i.grpr = 'https://us-ms.gr-cdn.com/getresponse-MBRuE/push-notification/Bmn7-pr.js';
-                    i['__GetResponseAnalyticsObject'] = r;
-                    i[r] = i[r] || function() {(i[r].q = i[r].q || []).push(arguments)};
-                    a = s.createElement(o);
-                    m = s.getElementsByTagName(o)[0];
-                    a.async = 1;
-                    a.src = g;
-                    m.parentNode.insertBefore(a, m);
-                })(window, document, 'script', 'https://ga.getresponse.com/script/ga.js?v=v2wp&wpid=NyswVKxcJFAApPS5wfyATLzRNFVsDZQ&grid=sBDcBXkZbfXoLA3c%3D', 'GrTracking');
-                GrTracking('setDomain', 'auto');
-                GrTracking('push');
+            (function(i, s, o, g, r, a, m){
+                i.grpr = 'https://us-ms.gr-cdn.com/getresponse-MBRuE/push-notification/BmaZ-pr.js';
+                i['__GetResponseAnalyticsObject'] = r;
+                i[r] = i[r] || function() {(i[r].q = i[r].q || []).push(arguments)};
+                a = s.createElement(o);
+                m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://ga.getresponse.com/script/ga.js?v=v2wp&wpid=NyswVKxcJFAApPS5wfyATLzRNFVsMCA&grid=sBDcBXkZbfXoLA3c%3D', 'GrTracking');
+            GrTracking('setDomain', 'auto');
+            GrTracking('push');
+
                 
                 return Swal.fire({        
                     type: 'success',
