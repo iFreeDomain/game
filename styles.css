@@ -46,9 +46,6 @@ body {
   user-select: none;
 }
 
-.sp-prompt.sp-native-popover.show-prompt {
-  color: #f80000;
-}
 /*@media (max-width: 770px) {/*
 
 /*}/*
