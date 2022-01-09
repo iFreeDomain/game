@@ -34,7 +34,12 @@ body {
   border-radius: 8px;
 }
 
-
+.swal2-cancel{
+  user-select: none;
+}
+.swal2-confirm{
+  user-select: none;
+}
 
  
 .custom-input-class::-webkit-input-placeholder {
